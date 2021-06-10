@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>CniuZi&#39;s Blog</title>
+  
+  <subtitle>blog</subtitle>
+  <link href="https://chiniuzi.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://chiniuzi.github.io/"/>
+  <updated>2021-06-10T10:19:52.061Z</updated>
+  <id>https://chiniuzi.github.io/</id>
+  
+  <author>
+    <name>niuzi</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://chiniuzi.github.io/2021/06/10/hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://chiniuzi.github.io/2021/06/10/hexo%E6%90%AD%E5%BB%BAgithub%E5%8D%9A%E5%AE%A2/</id>
+    <published>2021-06-10T10:19:52.061Z</published>
+    <updated>2021-06-10T10:19:52.061Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="使用hexo搭建github博客"><a href="#使用hexo搭建github博客" class="headerlink" title="使用hexo搭建github博客"></a>使用hexo搭建github博客</h2><p>###第一步</p><p>首先再电脑上安装好nodejs，安装成功后再terimial可以显示其版本。</p><p>使用nodejs工具下载yran（虽然我也不知道这个工具有什么用，我也没用到过这个工具）</p><p>在下载yarn的时候可能会报错，显示其中权限出现问题，查找资料后发现需要修改权限，修改内容如下：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set-ExcutionPolicy RemoteSigned</span><br></pre></td></tr></table></figure><p>这里的修改内容好像大小写是有影响的，就我而言，全部小写是没有这个指令的。</p><p>下载hexo：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>在电脑选择一个安装路径，可以选择一个要安装的名字，我这里起的名字就是Blog,选的路径是在D盘下，成功建立一个blog文件用来存放我的blog内容：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">D: /tools/</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure><p>在路径下执行:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nmp install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure><p>这里访问本地的localhost:4000,可以看到如下的初始Hexo界面：</p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610174745817.png" alt="image-20210610174745817" style="zoom:100%;" /><p>###第二步</p><p>选了一个Coder的主题，首先需要根据主题下面的介绍进行相对应的下载，但是我找不到了，于是具体的图就不放了；因为网络原因，我选择直接从网站上下载主题包，解压后将文件转到之前在D盘下建的tools工具中的blog文件中，找到theme文件夹，将解压后的主题文件夹放在里面，修改文件名为Coder（方便后面修改</p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610175426815.png" alt="image-20210610175426815"></p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610175433553.png" alt="image-20210610175433553"></p><p>然后在themes上级目录里找到_config.yum文件，对下面的主题名称进行修改，跟自己的之前的主题名对应</p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610175752673.png" alt="image-20210610175752673"></p><p>值得注意的是，每次修改完文件内容之后都需要在终端中进行数据的更新和自动生成</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean #清理缓存</span><br><span class="line">hexo g#自动生成新文件</span><br></pre></td></tr></table></figure><p>再次访问localhost:4000能够看到自己更换掉主题的页面</p><p>在themes文件下的Coder文件夹中同样也有一个_config.yum文件，这里修改的是自己主题的各项参数，主要修改了其中的几个参数</p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610180036608.png" alt="image-20210610180036608"></p><p>###第三步</p><p>首先创建一个github账号，我的账号名为chiniuzi，在themes下面的_config文件进行修改对应的Github,格式为chiniuzi.github.io </p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610180301493.png" alt="image-20210610180301493"></p><p>登录我的github账户，点击右上角添加一个新的github库</p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610180443061.png" alt="image-20210610180443061"></p><p>这里的储存库名字就按照自己建立的github账户来，我输入的应该是chiniuzi.github.io</p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610180721258.png" alt="image-20210610180721258"></p><p>直接创建即可，</p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610181052032.png" alt="image-20210610181052032"></p><p>后面我直接通过github桌面程序进行博客的更新和上传，在下载之后会要求建立一个文件夹，之后将之间blog中自动生成的public文件里的内容全部复制一份到chiniuzi.github.io里</p><p><img src="C:\Users\loucs\AppData\Roaming\Typora\typora-user-images\image-20210610181526495.png" alt="image-20210610181526495"></p><p>先点击左下角的按钮之后再上面的上传到分支，然后就能通过直接访问chiniuzi.github.io查看到我的博客内容。</p><p>需要注意的是，每次自己完成新的博客之后，都需要通过hexo clean;hexo g生成新的文件，再将public下的文件全部拖到chiniuzi.github.io文件夹中，再通过github桌面程序进行上一步操作，完成博客内容的更新。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;使用hexo搭建github博客&quot;&gt;&lt;a href=&quot;#使用hexo搭建github博客&quot; class=&quot;headerlink&quot; title=&quot;使用hexo搭建github博客&quot;&gt;&lt;/a&gt;使用hexo搭建github博客&lt;/h2&gt;&lt;p&gt;###第一步&lt;/p</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
